@@ -34,6 +34,7 @@ input[type="range"] {
     hsl(174, 77%, 80%) 50%,
     hsl(224, 65%, 95%) 50%
   );
+  height: 8px;
 }
 
 #plan::-webkit-slider-runnable-track {
@@ -44,12 +45,12 @@ input[type="range"] {
 }
 #plan::-webkit-slider-thumb {
   -webkit-appearance: none;
-  @apply transition-all active:bg-Slider_Backround hover:bg-Full_Slider_Bar bg-Slider_Backround h-[30px] w-[30px] rounded-full mt-[-11px] shadow-thumb;
+  @apply transition-all active:bg-Slider_Backround hover:bg-Full_Slider_Bar bg-Slider_Backround h-[30px] w-[30px] rounded-full mt-[-11px]  shadow-thumb;
 }
 #plan::-moz-range-thumb {
   appearance: none;
   -webkit-appearance: none;
-  @apply bg-Slider_Backround h-[30px] w-[30px] rounded-full mt-[-11px];
+  @apply transition-all active:bg-Slider_Backround hover:bg-Full_Slider_Bar bg-Slider_Backround h-[30px] w-[30px] rounded-full mt-[-11px]  shadow-thumb border-none;
 }
 
 /*  */

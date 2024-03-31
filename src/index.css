@@ -1,13 +1,55 @@
+@import "./fonts.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply relative bg-Main_Background;
+}
+/* TogglePlan */
+.toggle {
+  @apply relative w-12 h-5 rounded-full cursor-pointer md:hover:bg-Full_Slider_Bar bg-Toggle_Background;
+}
+.toggle > span {
+  @apply absolute w-[15px] transition-all h-[15px] -translate-y-1/2 bg-white rounded-full top-1/2 left-[4px];
+}
+.toggle:has(input:checked) span {
+  left: calc(100% - 19px);
+}
+.toggle:has(input:checked) {
+  @apply bg-Slider_Backround;
+}
+/*  */
+/* pageVeiws */
+
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 9999px;
+  background-image: linear-gradient(
+    to right,
+    hsl(174, 77%, 80%) 0%,
+    hsl(174, 77%, 80%) 50%,
+    hsl(224, 65%, 95%) 50%
+  );
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#plan::-webkit-slider-runnable-track {
+  @apply h-2;
 }
+#plan::-moz-range-track {
+  @apply h-2;
+}
+#plan::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  @apply transition-all active:bg-Slider_Backround hover:bg-Full_Slider_Bar bg-Slider_Backround h-[30px] w-[30px] rounded-full mt-[-11px] shadow-thumb;
+}
+#plan::-moz-range-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  @apply bg-Slider_Backround h-[30px] w-[30px] rounded-full mt-[-11px];
+}
+
+/*  */
